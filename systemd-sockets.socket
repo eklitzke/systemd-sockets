@@ -1,0 +1,8 @@
+[Unit]
+Description=The listen socket
+
+[Socket]
+ListenStream=8000
+
+[Install]
+WantedBy=sockets.target

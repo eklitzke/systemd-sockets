@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <cstdlib>
 #include <cstring>
 
 #include <iostream>
@@ -82,6 +83,7 @@ int main(int argc, char **argv) {
     int sock = socket(AF_INET, SOCK_STREAM, 0);
     if (sock < 0) {
       perror("socket()");
+      return 1;
     }
     sockaddr_in in_addr;
     memset(&in_addr, 0, sizeof(in_addr));
@@ -90,6 +92,7 @@ int main(int argc, char **argv) {
     in_addr.sin_addr.s_addr = INADDR_ANY;
     if (bind(sock, (sockaddr *)&in_addr, sizeof(in_addr))) {
       perror("bind()");
+      return 1;
     }
   }
 

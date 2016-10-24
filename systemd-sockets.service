@@ -1,0 +1,13 @@
+[Unit]
+Description=Test process
+After=network.target
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/home/evan/code/systemd-sockets/sockets
+CPUQuota=10%
+MemoryMax=100M
+
+[Install]
+WantedBy=multi-user.target
