@@ -33,6 +33,7 @@ int main(int argc, char **argv) {
       return 1;
     }
     const int host_port = static_cast<int>(ntohs(in_addr.sin_port));
+    std::cout << "inherited port " << host_port << std::endl;
     have_ports.push_back(host_port);
   }
   for (const auto &need : need_ports) {
